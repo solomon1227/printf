@@ -21,6 +21,7 @@ int _printf(const char *format, ...)
                 while (format[j] != '%' && format[j])
                 {
                         write(1, &format[j], 1);
+                        j++;
                         pSize++;
                 }
                 if (format[j] == '%')
