@@ -11,6 +11,7 @@ int (*get_printed_function(const char *format))(va_list)
         sp_t m[] = {
         {"%c", print_char},
         {"%s", print_string},
+        {"%d", print_int},
         {"%i", print_int},
         {NULL, NULL}
         };
