@@ -18,7 +18,7 @@ int (*get_printed_function(const char *format))(va_list)
         i = 0;
         while(m[i].sp)
         {
-            if (m[i].sp[0] == format[i] && m[i].sp[1] == format[i + 1])
+            if (m[i].sp[0] == format[0] && m[i].sp[1] == format[1])
                     return (m[i].fun);
             i++;
         }
