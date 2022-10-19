@@ -19,22 +19,24 @@ int _printf(const char *format, ...)
         j = 0;
        while (format[j])
        {
-                while (format[j] != '%' && format[j])
+                while (format[j] != '%' && format[j] == '\0')
                 {
                         write(1, &format[j], 1);
                         j++;
                         pSize++;
                 }
                 if (format[j] == '%')
+                {        
                         fun = get_printed_function(&format[j]);
-                if (fun != NULL)
-                {
-                        pSize += fun(ph);
-                        j += 2;
-                        continue;
+                        if (fun != NULL)
+                        {
+                                pSize += fun(ph);
+                                j += 2;
+                                continue;
+                        }
+                        else
+                                return (-1);
                 }
-                if (format[j + 1] == '\0')
-                        return (-1);
                 write(1, &format[j], 1);
                 j++;
                 pSize++;
