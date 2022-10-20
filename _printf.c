@@ -32,5 +32,6 @@ int _printf(const char *format, ...)
 		j++;
 		pSize++;
 	}
+	va_end(ph);
 	return (pSize);
 }
