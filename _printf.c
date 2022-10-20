@@ -18,12 +18,6 @@ int _printf(const char *format, ...)
 	va_start(ph, format);
 	while (format[j])
 	{
-		while (format[j] != '%' && format[j] == '\0')
-		{
-			write(1, &format[j], 1);
-			j++;
-			pSize++;
-		}
 		if (format[j] == '%')
 		{
 			fun = get_printed_function(&format[j]);
@@ -32,15 +26,6 @@ int _printf(const char *format, ...)
 				pSize += fun(ph);
 				j += 2;
 				continue;
-			}
-			else
-			{
-				if (format[j + 1] == '\0')
-				{
-					write(1, &format[j], 1);
-					pSize++;
-					break;
-				}
 			}
 		}
 		write(1, &format[j], 1);
