@@ -4,16 +4,22 @@
 #include <stdarg.h>
 #include <string.h>
 #include <unistd.h>
-
-typedef struct {
-        char *sp;
-        int (*fun)(va_list);
-}sp_t;
+/**
+  * struct specifier - struct
+  * @sp: specifier
+  * @fun: associating function
+  */
+typedef struct specifier
+{
+	char *sp;
+	int (*fun)(va_list);
+} sp_t;
 
 int _printf(const char *format, ...);
 int print_char(va_list);
 int print_string(va_list);
 int print_int(va_list);
+int print_binary(va_list);
 int (*get_printed_function(const char *format))(va_list);
 
 #endif
