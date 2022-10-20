@@ -9,5 +9,5 @@ int print_char(va_list argg)
 	char c;
 
 	c = va_arg(argg, int);
-	return (write(1, &c, 1));
+	return (_putchar(c));
 }

@@ -9,12 +9,19 @@
 int print_string(va_list ph)
 {
 	char *str;
+	int len, i;
 
 	str = va_arg(ph, char *);
 	if (str == NULL)
 	{
 		str = "(null)";
-		return (write(1, str, strlen(str)));
+		len = strlen(str);
+		for (i = 0; i < len; i++)
+			_putchar(str[i]);
+		return (len);
 	}
-	return (write(1, str, strlen(str)));
+	len = strlen(str);
+	for (i = 0; i < len; i++)
+		_putchar(str[i]);
+	return (len);
 }
