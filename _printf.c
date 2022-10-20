@@ -11,9 +11,8 @@ int _printf(const char *format, ...)
 {
 	va_list ph;
 	int (*fun)(va_list);
-	unsigned int j, pSize;
+	unsigned int j = 0, pSize = 0;
 
-	pSize = 0, j = 0;
 	if (format == NULL)
 		return (-1);
 	va_start(ph, format);
@@ -48,6 +47,5 @@ int _printf(const char *format, ...)
 		j++;
 		pSize++;
 	}
-	va_end(ph);
 	return (pSize);
 }
