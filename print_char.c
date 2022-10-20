@@ -1,13 +1,13 @@
 #include "main.h"
 /**
- * @print_char - print a char in to stdout
- * 
- * Return: size of byte write 
+ * print_char - print a char in to stdout
+ * @argg: argument
+ * Return: size of byte write
  */
 int print_char(va_list argg)
 {
-        char c;        
+	char c;
 
-        c = va_arg(argg, int);
-        return (write(1, &c, 1));
+	c = va_arg(argg, int);
+	return (write(1, &c, 1));
 }
