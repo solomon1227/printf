@@ -17,6 +17,7 @@ int (*get_printed_function(const char *format))(va_list)
 	{"%b", print_binary},
 	{"%x", print_x},
 	{"%X", print_X},
+	{"%p", print_x},
 	{NULL, NULL}
 	};
 	int i;
