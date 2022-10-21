@@ -4,7 +4,7 @@
 * @b: number in decinal
 * Return: number of chars printed
 */
-int print_bin(va_list b)
+int print_binary(va_list b)
 {
 	unsigned int len, powten, j, digit, n, num;
 	int count = 0;
