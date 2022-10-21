@@ -1,22 +1,40 @@
 #include "main.h"
-#include <stdio.h>
 /**
- * print_binary - print a binary in to stdout
- * @argg: argument
- * Return: size of byte write
- */
-int print_binary(va_list argg)
+* print_bin - convert to binary
+* @b: number in decinal
+* Return: number of chars printed
+*/
+int print_bin(va_list b)
 {
-	int n, mod;
+	unsigned int len, powten, j, digit, n, num;
+	int count = 0;
 
-	n = va_arg(argg, int);
-	while (n >= 2)
+	n = va_arg(b, unsigned int);
+	if (n != 0)
 	{
-		mod = n % 2;
-		write(1, &mod, 1);
-		n = n / 2;
+		num = n;
+		len = 0;
+		while (num != 0)
+		{
+			num /= 2;
+			len++;
+		}
+		powten = 1;
+		for (j = 1; j <= len - 1; j++)
+			powten *= 2;
+		for (j = 1; j <= len; j++)
+		{
+			digit = n / powten;
+			_putchar(digit + '0');
+			count++;
+			n -= digit * powten;
+			powten /= 2;
+		}
 	}
-	write(1, &n, 1);
-	putchar('\n');
-	return (sizeof(n));
+	else
+	{
+		_putchar('0');
+		return (1);
+	}
+	return (count);
 }
