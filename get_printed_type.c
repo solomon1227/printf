@@ -13,7 +13,10 @@ int (*get_printed_function(const char *format))(va_list)
 	{"%s", print_string},
 	{"%d", print_int},
 	{"%i", print_int},
+	{"%d", print_int},
 	{"%b", print_binary},
+	{"%x", print_x},
+	{"%X", print_X},
 	{NULL, NULL}
 	};
 	int i;
