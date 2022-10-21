@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* print_bin - convert to binary
+* print_binary - convert to binary
 * @b: number in decinal
 * Return: number of chars printed
 */
