@@ -22,5 +22,8 @@ int print_string(va_list);
 int print_int(va_list);
 int print_binary(va_list);
 int (*get_printed_function(const char *format))(va_list);
+int print_x(va_list);
+int print_X(va_list);
+int print_hex(unsigned int, unsigned int)
 
 #endif
