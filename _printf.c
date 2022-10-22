@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
                         {
                                 Write(1, &format[j];
                                 pSize++;
-                                j++;
+                                j += 2;
                                 continue;
                         }
 		}
