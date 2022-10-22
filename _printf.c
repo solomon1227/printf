@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 			}
                         if (format[j + 1] == '%')
                         {
-                                Write(1, &format[j], 1);
+                                write(1, &format[j], 1);
                                 pSize++;
                                 j += 2;
                                 continue;
