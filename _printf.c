@@ -27,6 +27,9 @@ int _printf(const char *format, ...)
 				j += 2;
 				continue;
 			}
+			else
+				if (format[j + 1] == '\0')
+					break;
 		}
 		write(1, &format[j], 1);
 		j++;
