@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 				continue;
 			}
 			if (format[j + 1] == '\0')
-				break;
+				return (-1);
 			if (format[j + 1] == '%')
 			{
 				write(1, &format[j], 1);
